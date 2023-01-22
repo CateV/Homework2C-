@@ -12,28 +12,22 @@ if (number < 100)
     System.Console.WriteLine($"в числе {number} третьей цифры нет");
 else
 {
-    int n = number;
-    int count = 0;
-while (n/10 > 0)
+   while (number/1000 > 0)
 {
-    n = n/10;
-    count++;
+    number = number/10;
 }
-int multiple = number;
-int devideBy10 = count - 2;
-while (devideBy10>0)
-{
-    multiple = multiple/10;
-    devideBy10=devideBy10-1;
-}
-int third = multiple%10;
-/*наверно можно и так, но как степень пишется?   
-int third = number/10 в степени devideBy10%10; */
-System.Console.WriteLine($"Третья цифра числа - {third}");
+int third = number%10;
+System.Console.WriteLine($"третья цифра - {third}");
 /*когда я последнюю строчку писала вот так:
 System.Console.WriteLine($"Третья цифра числа {number} - {third}");
-и при этом в dotnet run писала отрицательное число (к примеру, -345),
+и при этом:
+1)в dotnet run писала отрицательное число (к примеру, -345),
 текст выводился почему-то "Третья цифра числа 345 - 5".
 Почему выводил не "-345"? Как этого добиться? В чём ошибка?
+2)в dotnet run писала чуть более длинное число (к примеру, 56779),
+текст выводился "Третья цифра числа 567 - 5". Я понимаю, что он брал последнее значение 
+number, а именно из     number = number/10. Но не понимаю, как сделать так, чтобы брал
+то число, которое вводил пользователь. Подскажите, пожалуйста! =)
+
 */
 }
